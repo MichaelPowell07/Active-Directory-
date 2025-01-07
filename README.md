@@ -131,6 +131,84 @@ Join Client-1 to the Domain
 
 ![image](https://github.com/user-attachments/assets/ae5ecef0-fa8e-4664-973d-dde9e40707b6)
 
+![image](https://github.com/user-attachments/assets/e3921af1-a911-45b4-bc6d-b5722eb59aea)
+
+Part 3: Creating Users with PowerShell
+
+Setup Remote Desktop for Domain Users
+
+1.) Log into Client-1 as mydomain.com/jane_admin.
+2.) Open Systems Properties and enable Remote Desktop.
+3.) Allow "domain users" access to remote desktop.
+
+![image](https://github.com/user-attachments/assets/078ffc41-dceb-4148-8537-540faccc6758)
+
+Create Users with PowerShell 
+
+1.) Log in to DC-1 as jane_admin.
+2.) Open PowerShell ISE as an administrator.
+3.) Create multiple new users using a script 
+4.) Verify users appear in the _EMPLOYEES OU in ADUC.
+5.) Attempt to log into Client-1 with one of the created accounts.
+
+![image](https://github.com/user-attachments/assets/4c0897fe-0f81-4c2c-8247-b3f9c73e2a91)
+
+![image](https://github.com/user-attachments/assets/55d746c6-59a5-44c0-a107-6d8f2a2c1597)
+
+![image](https://github.com/user-attachments/assets/61e670d6-34f2-4996-8d67-7696ec1048b1)
+
+Part 4: Group Policy and Managing Accounts
+
+Account Lockout Configurations
+
+1.) Log into DC-1.
+2.) Open Group Policy Management.
+3.) Edit the Default Domain Policy
+- set account lockout thresehold to 5 invalid attempts
+4.) Attempt to login with a user account using incorrect passwords observe the account lockout behavior.
+5.) Unlock the account in ADUC and reset the password.
+
+  ![image](https://github.com/user-attachments/assets/4544a000-2236-43b1-8f40-f27167f52f5b)
+
+  ![image](https://github.com/user-attachments/assets/a0753b50-f83d-4ecd-bd83-40532648f0da)
+
+  ![image](https://github.com/user-attachments/assets/258bcd83-c11d-4f47-a52e-6c3f16d05a16)
+
+  ![image](https://github.com/user-attachments/assets/33ecd6b8-8748-4dc0-9d02-97b553c71de3)
+
+  Enable and Disable Accounts
+
+  1.) Disable a user account in ADUC.
+  2.) Attempt to login with the disabled account and observe the error message.
+  3.) Re-enable the account and login successfully.
+
+  ![image](https://github.com/user-attachments/assets/424903b6-7360-4274-a5de-1d4bd87031bc)
+
+  ![image](https://github.com/user-attachments/assets/e1437db9-5b35-4fe2-af72-93a6e4488336)
+
+  ![image](https://github.com/user-attachments/assets/a82bb35a-2f0c-42f9-ae57-69096a98119e)
+
+  Observing logs
+  1.) Review authentication and account-related logs in event viewer
+  - Log on DC-1 for domain-level events
+  - Log on Client-1 for local events
+
+    ![image](https://github.com/user-attachments/assets/d22ec0ba-9c62-482d-9717-445a13c2b206)
+
+    Completion
+
+    Congrats! You have successfully deployed and configured an on-premises Active Directory enviornment in Azure.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
